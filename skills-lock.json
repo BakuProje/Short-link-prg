@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "skills": {
+    "improve-ui": {
+      "source": "ibelick/ui-skills",
+      "sourceType": "github",
+      "skillPath": "skills/improve-ui/SKILL.md",
+      "computedHash": "31c09b79a1c196adccb1637a225cef54f537da87430fda0ba309ef83e78f10e5"
+    },
+    "smooth-shadow-ring": {
+      "source": "flornkm/shadow-plugin",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/smooth-shadow-ring/SKILL.md",
+      "computedHash": "7cd1061a547fc9a49c1de6b32355550559389ad26b2bd655107b2a635669e9aa"
+    },
+    "ui-ux-pro-max": {
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/ui-ux-pro-max/SKILL.md",
+      "computedHash": "3f1e66e08e3d1d3feaf2a3187705022812e0bece8ff5bee80fe7cf782f26fe8b"
+    }
+  }
+}
