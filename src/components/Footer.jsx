@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="security-text">
           <h4>Portal Terverifikasi & Aman</h4>
           <p>
-            Pastikan seluruh transaksi & komunikasi hanya dilakukan melalui nomor WhatsApp resmi dan domain login <strong>prgrental.site</strong> yang tertera di atas.
+            Pastikan seluruh transaksi & komunikasi hanya dilakukan melalui nomor WhatsApp resmi dan domain login <strong>prgrental.id</strong> yang tertera di atas.
           </p>
         </div>
       </div>

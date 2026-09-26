@@ -28,27 +28,51 @@ export default function LinkCard({
   iconType = 'whatsapp',
   actionUrl,
   isFeatured = false,
+  isInternal = false,
   onClick
 }) {
+  const handleClick = (e) => {
+    if (isInternal || !actionUrl || actionUrl === '#') {
+      e.preventDefault();
+      if (onClick) onClick(e);
+    } else if (onClick) {
+      onClick(e);
+    }
+  };
+
+  const renderIcon = () => {
+    if (iconType === 'tutorial' || iconType === 'gamepad' || iconType === 'video') {
+      return (
+        <img
+          src="/images/prgtutoriallogo.png"
+          alt="PRG Tutorial Icon"
+          className="member-logo-icon tutorial-custom-icon"
+        />
+      );
+    }
+    if (iconType === 'member' || iconType === 'website') {
+      return (
+        <img
+          src="/images/prglogo.png"
+          alt="PRG Logo Icon"
+          className="member-logo-icon"
+        />
+      );
+    }
+    return <WhatsAppSvg />;
+  };
+
   return (
     <a
-      href={actionUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`shortlink-card ${isFeatured ? 'featured' : ''}`}
-      onClick={onClick}
+      href={actionUrl || '#'}
+      target={isInternal || !actionUrl ? '_self' : '_blank'}
+      rel={isInternal || !actionUrl ? undefined : 'noopener noreferrer'}
+      className={`shortlink-card ${isFeatured ? 'featured' : ''} ${isInternal ? 'card-internal' : ''}`}
+      onClick={handleClick}
     >
       {/* Icon */}
       <div className="shortlink-icon-container">
-        {iconType === 'member' || iconType === 'website' ? (
-          <img
-            src="/images/prglogo.png"
-            alt="PRG Logo Icon"
-            className="member-logo-icon"
-          />
-        ) : (
-          <WhatsAppSvg />
-        )}
+        {renderIcon()}
       </div>
 
       {/* Main Title */}
